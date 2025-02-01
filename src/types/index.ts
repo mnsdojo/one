@@ -2,7 +2,10 @@ export interface AIModel {
   generate(prompt: string): Promise<string>;
   name: string;
 }
-
+export interface Command {
+  description: string; // Description of the command
+  execute(args: string[]): Promise<void>; // Method to execute the command
+}
 export interface ModelConfig {
   apiKey?: string;
   model?: string;
